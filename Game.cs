@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace HangmanGame
+﻿namespace HangmanGame
 {
     internal class Game
     {
