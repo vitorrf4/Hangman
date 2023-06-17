@@ -4,8 +4,8 @@ namespace HangmanGame
 {
     internal class Game
     {
-        private string guessedLetter;
-        private ArrayList guessedLetters = new(28);
+        private string _guessedLetter;
+        private ArrayList _guessedLetters = new(28);
         private string HangmanWord { get; set; }
         public string[] WordUnderline { get; private set; }
         public int Attempts { get; private set; } = 0;
@@ -54,10 +54,10 @@ namespace HangmanGame
         }
         public void ShowGuessedLetters()
         {
-            if (guessedLetters.Count > 0)
+            if (_guessedLetters.Count > 0)
             {
                 Console.Write("Guessed Letters: ");
-                foreach (string letter in guessedLetters)
+                foreach (string letter in _guessedLetters)
                 {
                     Console.Write(letter.ToUpper() + " | ");
                 }
@@ -67,29 +67,29 @@ namespace HangmanGame
         public void GetLetter()
         {
             Console.Write("Input a letter: ");
-            guessedLetter = Console.ReadLine().ToLower().Trim();
+            _guessedLetter = Console.ReadLine().ToLower().Trim();
         }
         public bool ValidateLetter()
         {
-            if (guessedLetter.Length == 0)
+            if (_guessedLetter.Length == 0)
             {
                 Console.Clear();
                 Console.WriteLine("Guess at least one letter!");
                 return false;
             }
-            else if (Char.IsDigit(guessedLetter[0]))
+            else if (Char.IsDigit(_guessedLetter[0]))
             {
                 Console.Clear();
                 Console.WriteLine("No numbers allowed!");
                 return false;
             }
-            else if (guessedLetter.Length > 1)
+            else if (_guessedLetter.Length > 1)
             {
                 Console.Clear();
                 Console.WriteLine("Guess just one letter!");
                 return false;
             } 
-            else if (guessedLetters.Contains(guessedLetter))
+            else if (_guessedLetters.Contains(_guessedLetter))
             {
                 Console.Clear();
                 Console.WriteLine("You have already guessed this letter");
@@ -102,17 +102,17 @@ namespace HangmanGame
         }
         public void CheckLetter()
         {
-            if (HangmanWord.Contains(guessedLetter))
+            if (HangmanWord.Contains(_guessedLetter))
             {
                 Console.Clear();
                 Console.WriteLine("Right guess!");
-                guessedLetters.Add(guessedLetter);
+                _guessedLetters.Add(_guessedLetter);
 
                 for (int i = 0; i < HangmanWord.Length; i++)
                 {
-                    if (HangmanWord[i] == guessedLetter[0])
+                    if (HangmanWord[i] == _guessedLetter[0])
                     {
-                        WordUnderline[i] = guessedLetter;
+                        WordUnderline[i] = _guessedLetter;
 
                     }
                 }
@@ -122,7 +122,7 @@ namespace HangmanGame
                 Console.Clear();
                 Console.WriteLine("Wrong guess!");
                 Attempts++;
-                guessedLetters.Add(guessedLetter);
+                _guessedLetters.Add(_guessedLetter);
             }
         }
         public void CheckVictoryOrDefeat()
