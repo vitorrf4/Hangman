@@ -23,8 +23,8 @@ namespace HangmanGame
         public void StartGame()
         {
             Console.WriteLine("   HANGMAN");
-
-
+            DrawHangman();
+            ShowUnderline();
         }
         public void DrawHangman()
         {

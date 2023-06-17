@@ -4,10 +4,8 @@
     {
         static void Main()
         {
-            Game game = new("brewery");
+            Game game = new("computer");
             game.StartGame();
-            game.DrawHangman();
-            game.ShowUnderline();
 
             while (game.Attempts < 6 && game.WordUnderline.Contains("_"))
             {
@@ -20,6 +18,7 @@
             }
 
             game.CheckVictoryOrDefeat();
+            Console.ReadKey();
 
             //TODO: validate special characters
         }
