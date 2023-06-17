@@ -2,7 +2,7 @@
 
 namespace HangmanGame
 {
-    class Game
+    internal class Game
     {
         private string _guessedLetter;
         private readonly ArrayList _guessedLetters = new(28);
