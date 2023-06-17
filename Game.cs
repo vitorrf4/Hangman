@@ -5,7 +5,7 @@ namespace HangmanGame
     internal class Game
     {
         private string _guessedLetter;
-        private readonly ArrayList _guessedLetters = new(28);
+        private readonly List<string> _guessedLetters = new(28);
         private readonly string _hangmanWord;
         public string[] WordUnderline { get; private set; }
         public int Attempts { get; private set; } = 0;
