@@ -5,16 +5,16 @@ namespace HangmanGame
     internal class Game
     {
         private string _guessedLetter;
-        private ArrayList _guessedLetters = new(28);
-        private string HangmanWord { get; set; }
+        private readonly ArrayList _guessedLetters = new(28);
+        private readonly string _hangmanWord;
         public string[] WordUnderline { get; private set; }
         public int Attempts { get; private set; } = 0;
 
         public Game(string hangmanWord)
         {
-            this.HangmanWord = hangmanWord;
-            WordUnderline = new string[HangmanWord.Length];
-            for (int i = 0; i < HangmanWord.Length; i++)
+            this._hangmanWord = hangmanWord;
+            WordUnderline = new string[_hangmanWord.Length];
+            for (int i = 0; i < _hangmanWord.Length; i++)
             {
                 this.WordUnderline[i] = "_";
             }
@@ -102,15 +102,15 @@ namespace HangmanGame
         }
         public void CheckLetter()
         {
-            if (HangmanWord.Contains(_guessedLetter))
+            if (_hangmanWord.Contains(_guessedLetter))
             {
                 Console.Clear();
                 Console.WriteLine("Right guess!");
                 _guessedLetters.Add(_guessedLetter);
 
-                for (int i = 0; i < HangmanWord.Length; i++)
+                for (int i = 0; i < _hangmanWord.Length; i++)
                 {
-                    if (HangmanWord[i] == _guessedLetter[0])
+                    if (_hangmanWord[i] == _guessedLetter[0])
                     {
                         WordUnderline[i] = _guessedLetter;
 
@@ -133,7 +133,7 @@ namespace HangmanGame
             }
             else
             {
-                Console.WriteLine($"Congratulations, the word was {HangmanWord}!");
+                Console.WriteLine($"Congratulations, the word was {_hangmanWord}!");
             }
         }
     }
