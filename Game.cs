@@ -7,8 +7,8 @@ namespace HangmanGame
         private string guessedLetter;
         private ArrayList guessedLetters = new(28);
         private string HangmanWord { get; set; }
-        public string[] WordUnderline { get; set; }
-        public int Attempts { get; set; } = 0;
+        public string[] WordUnderline { get; private set; }
+        public int Attempts { get; private set; } = 0;
 
         public Game(string hangmanWord)
         {
@@ -64,6 +64,11 @@ namespace HangmanGame
                 Console.WriteLine("\n");
             }
         }
+        public void GetLetter()
+        {
+            Console.Write("Input a letter: ");
+            guessedLetter = Console.ReadLine().ToLower().Trim();
+        }
         public bool ValidateLetter()
         {
             if (guessedLetter.Length == 0)
@@ -94,11 +99,6 @@ namespace HangmanGame
             {
                 return true;
             }
-        }
-        public void GetLetter()
-        {
-            Console.Write("Input a letter: ");
-            guessedLetter = Console.ReadLine().ToLower().Trim();
         }
         public void CheckLetter()
         {
