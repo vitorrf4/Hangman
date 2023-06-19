@@ -1,4 +1,6 @@
-﻿namespace HangmanGame
+﻿using System.Text.RegularExpressions;
+
+namespace HangmanGame
 {
     internal class Game
     {
@@ -71,6 +73,8 @@
         }
         public bool ValidateLetter()
         {
+            Regex specialCharacters = new ("[!@#$%&*()\\[\\]\\-=_+{}'\"\\|,.;/~^´`¨?¹²³£¢¬]");
+
             if (_guessedLetter.Length == 0)
             {
                 Console.Clear();
@@ -81,6 +85,12 @@
             {
                 Console.Clear();
                 Console.WriteLine("No numbers allowed!");
+                return false;
+            }
+            else if (specialCharacters.IsMatch(_guessedLetter))
+            {
+                Console.Clear();
+                Console.WriteLine("No special characters allowed!");
                 return false;
             }
             else if (_guessedLetter.Length > 1)

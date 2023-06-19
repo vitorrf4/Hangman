@@ -26,9 +26,7 @@
                     game.CheckVictoryOrDefeat();
                 }
             } while (Game.PromptReplay());
-            
-            //TODO: Validate special characters
-            //TODO: Filter random words with special characters
+
         }
     }
 }

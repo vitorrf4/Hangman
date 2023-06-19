@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PICHAU\\source\\repos\\Hangman (new)\\Hangman.csproj",
+      "projectUniqueName": "C:\\Users\\PICHAU\\source\\repos\\Hangman\\Hangman.csproj",
       "projectName": "Hangman",
-      "projectPath": "C:\\Users\\PICHAU\\source\\repos\\Hangman (new)\\Hangman.csproj",
+      "projectPath": "C:\\Users\\PICHAU\\source\\repos\\Hangman\\Hangman.csproj",
       "packagesPath": "C:\\Users\\PICHAU\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PICHAU\\source\\repos\\Hangman (new)\\obj\\",
+      "outputPath": "C:\\Users\\PICHAU\\source\\repos\\Hangman\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PICHAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
