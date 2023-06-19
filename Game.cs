@@ -127,7 +127,7 @@
         {
             if (Attempts == 6)
             {
-                Console.WriteLine("GAME OVER");
+                Console.WriteLine($"GAME OVER\nThe word was ${_hangmanWord}");
             }
             else
             {
