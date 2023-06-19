@@ -6,6 +6,19 @@ namespace HangmanGame
     {
         public static string GetWord()
         {
+            string jsonWord;
+
+            do 
+            {
+                jsonWord = GenerateWord();
+            } 
+            while (jsonWord.Contains('-')); // generates another word if it's a hyphenated noun
+
+            string formattedJson = FormatJson(jsonWord);
+            return formattedJson;
+        }
+        public static string GenerateWord()
+        {
             HttpClient client = new();
             var responseTask = client.GetAsync("https://random-word-form.herokuapp.com/random/noun");
             responseTask.Wait();
@@ -17,10 +30,14 @@ namespace HangmanGame
 
             var stringResponse = responseTask.Result.Content.ReadAsStringAsync();
             stringResponse.Wait();
-            var jsonWord = stringResponse.Result;
+            var json = stringResponse.Result;
 
-            jsonWord = Regex.Replace(jsonWord, "[\\[\\]\"]" , "");
-            return jsonWord;
+            return json;
+        }
+        public  static string FormatJson(string json)
+        {
+            string formattedJson = Regex.Replace(json, "[\\[\\]\"]", "");
+            return formattedJson;
         }
     }
 }
