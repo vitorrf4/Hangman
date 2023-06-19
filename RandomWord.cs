@@ -13,7 +13,7 @@ namespace HangmanGame
         public static string getWord()
         {
             HttpClient client = new();
-            var responseTask = client.GetAsync("https://random-word-frm.herokuapp.com/random/noun");
+            var responseTask = client.GetAsync("https://random-word-form.herokuapp.com/random/noun");
             responseTask.Wait();
 
             if (!(responseTask.Result.IsSuccessStatusCode))

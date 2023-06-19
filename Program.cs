@@ -8,30 +8,30 @@ namespace HangmanGame
     {
         static void Main()
         {
-            string word = RandomWord.getWord();
-
-            if (word.Length > 0)
+            do
             {
+                string word = RandomWord.getWord();
                 Game game = new(word);
-                game.StartGame();
 
-                while (game.Attempts < 6 && game.WordUnderline.Contains("_"))
+                if (word.Length > 0)
                 {
-                    game.GetLetter();
-                    if (game.ValidateLetter())
-                        game.CheckLetter();
-                    game.DrawHangman();
-                    game.ShowUnderline();
-                    game.ShowGuessedLetters();
+                    game.StartGame();
+
+                    while (game.Attempts < 6 && game.WordUnderline.Contains("_"))
+                    {
+                        game.GetLetter();
+                        if (game.ValidateLetter())
+                            game.CheckLetter();
+                        game.DrawHangman();
+                        game.ShowUnderline();
+                        game.ShowGuessedLetters();
+                    }
+
+                    game.CheckVictoryOrDefeat();
                 }
-
-                game.CheckVictoryOrDefeat();
-                Console.ReadKey();
-
-            }
-
+            } while (Game.PromptReplay());
+            
             //TODO: Validate special characters
-            //TODO: Replay feature
             //TODO: Filter random words with special characters
         }
     }

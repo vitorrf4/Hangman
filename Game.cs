@@ -6,12 +6,13 @@
         private readonly List<string> _guessedLetters = new(28);
         private readonly string _hangmanWord;
         public string[] WordUnderline { get; private set; }
-        public int Attempts { get; private set; } = 0;
+        public int Attempts { get; private set; }
 
         public Game(string hangmanWord)
         {
             this._hangmanWord = hangmanWord;
             WordUnderline = new string[_hangmanWord.Length];
+
             for (int i = 0; i < _hangmanWord.Length; i++)
             {
                 this.WordUnderline[i] = "_";
@@ -20,6 +21,7 @@
 
         public void StartGame()
         {
+            Console.Clear();
             Console.WriteLine("   HANGMAN");
             DrawHangman();
             ShowUnderline();
@@ -133,6 +135,35 @@
             {
                 Console.WriteLine($"Congratulations, the word was {_hangmanWord}!");
             }
+        }
+        public static bool PromptReplay()
+        {
+            string response;
+            bool replay = false;
+
+            Console.WriteLine("Do you wish to play again?");
+            Console.WriteLine("Type Y for Yes and N for no");
+
+            do
+            {
+                response = Console.ReadLine().ToUpper();
+
+                if (response == "Y")
+                {
+                    replay = true;
+                }
+                else if (response == "N")
+                {
+                    Console.WriteLine("Thank you for playing!");
+                    replay = false;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input");
+                    Console.WriteLine("Type Y for Yes and N for no");
+                }
+            } while (!(response == "Y" || response == "N"));
+            return replay;
         }
     }
 }
