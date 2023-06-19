@@ -13,10 +13,10 @@
                 throw new Exception("The application could not run: " + responseTask.Result.StatusCode);
             }
 
-            var result = responseTask.Result;
-            var readTask = result.Content.ReadAsStringAsync();
-            readTask.Wait();
-            var word = readTask.Result;
+            var result = responseTask.Result.Content.ReadAsStringAsync();
+            result.Wait();
+            var word = result.Result;
+
             word = word.Replace("[", "");
             word = word.Replace("]", "");
             word = word.Replace("\"", "");
