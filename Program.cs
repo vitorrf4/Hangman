@@ -6,7 +6,7 @@
         {
             do
             {
-                string word = RandomWord.getWord();
+                string word = RandomWord.GetWord();
                 Game game = new(word);
 
                 if (word.Length > 0)

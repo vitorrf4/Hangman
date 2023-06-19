@@ -1,8 +1,10 @@
-﻿namespace HangmanGame
+﻿using System.Text.RegularExpressions;
+
+namespace HangmanGame
 {
     public class RandomWord
     {
-        public static string getWord()
+        public static string GetWord()
         {
             HttpClient client = new();
             var responseTask = client.GetAsync("https://random-word-form.herokuapp.com/random/noun");
@@ -13,15 +15,12 @@
                 throw new Exception("The application could not run: " + responseTask.Result.StatusCode);
             }
 
-            var result = responseTask.Result.Content.ReadAsStringAsync();
-            result.Wait();
-            var word = result.Result;
+            var stringResponse = responseTask.Result.Content.ReadAsStringAsync();
+            stringResponse.Wait();
+            var jsonWord = stringResponse.Result;
 
-            word = word.Replace("[", "");
-            word = word.Replace("]", "");
-            word = word.Replace("\"", "");
-            word = word.Replace("]", "");
-            return word;
+            jsonWord = Regex.Replace(jsonWord, "[\\[\\]\"]" , "");
+            return jsonWord;
         }
     }
 }
