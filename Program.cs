@@ -31,7 +31,6 @@ namespace HangmanGame
             }
 
             //TODO: Validate special characters
-            //TODO: Show word in game over
             //TODO: Replay feature
             //TODO: Filter random words with special characters
         }
