@@ -1,8 +1,4 @@
-﻿using System;
-using System.Net;
-using System.Runtime.CompilerServices;
-
-namespace HangmanGame
+﻿namespace HangmanGame
 {
     class Hangman
     {
