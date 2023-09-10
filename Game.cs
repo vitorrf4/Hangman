@@ -28,6 +28,7 @@ namespace HangmanGame
             DrawHangman();
             ShowUnderline();
         }
+
         public void DrawHangman()
         {
             string[] hangmanDrawing = { "", "", " ", "", "", "" };
@@ -46,6 +47,7 @@ namespace HangmanGame
             "|    {4} {5}\n", hangmanDrawing[0], hangmanDrawing[1], hangmanDrawing[2], hangmanDrawing[3], hangmanDrawing[4], hangmanDrawing[5]
             );
         }
+
         public void ShowUnderline()
         {
             for (int i = 0; i < WordUnderline.Length; i++)
@@ -54,6 +56,7 @@ namespace HangmanGame
             }
             Console.WriteLine("\n");
         }
+
         public void ShowGuessedLetters()
         {
             if (_guessedLetters.Count > 0)
@@ -66,11 +69,13 @@ namespace HangmanGame
                 Console.WriteLine("\n");
             }
         }
+
         public void GetLetter()
         {
             Console.Write("Input a letter: ");
             _guessedLetter = Console.ReadLine().ToLower().Trim();
         }
+
         public bool ValidateLetter()
         {
             Regex specialCharacters = new ("[!@#$%&*()\\[\\]\\-=_+{}'\"\\|,.;/~^´`¨?¹²³£¢¬]");
@@ -81,35 +86,38 @@ namespace HangmanGame
                 Console.WriteLine("Guess at least one letter!");
                 return false;
             }
-            else if (Char.IsDigit(_guessedLetter[0]))
+
+            if (Char.IsDigit(_guessedLetter[0]))
             {
                 Console.Clear();
                 Console.WriteLine("No numbers allowed!");
                 return false;
             }
-            else if (specialCharacters.IsMatch(_guessedLetter))
+
+            if (specialCharacters.IsMatch(_guessedLetter))
             {
                 Console.Clear();
                 Console.WriteLine("No special characters allowed!");
                 return false;
             }
-            else if (_guessedLetter.Length > 1)
+
+            if (_guessedLetter.Length > 1)
             {
                 Console.Clear();
                 Console.WriteLine("Guess just one letter!");
                 return false;
             } 
-            else if (_guessedLetters.Contains(_guessedLetter))
+
+            if (_guessedLetters.Contains(_guessedLetter))
             {
                 Console.Clear();
                 Console.WriteLine("You have already guessed this letter");
                 return false;
             }
-            else
-            {
-                return true;
-            }
+
+            return true;
         }
+
         public void CheckLetter()
         {
             if (_hangmanWord.Contains(_guessedLetter))
@@ -123,10 +131,10 @@ namespace HangmanGame
                     if (_hangmanWord[i] == _guessedLetter[0])
                     {
                         WordUnderline[i] = _guessedLetter;
-
                     }
                 }
             }
+
             else
             {
                 Console.Clear();
@@ -135,6 +143,7 @@ namespace HangmanGame
                 _guessedLetters.Add(_guessedLetter);
             }
         }
+
         public void CheckVictoryOrDefeat()
         {
             if (Attempts == 6)
@@ -146,6 +155,7 @@ namespace HangmanGame
                 Console.WriteLine($"Congratulations, the word was {_hangmanWord}!");
             }
         }
+
         public static bool PromptReplay()
         {
             string response;
@@ -164,7 +174,7 @@ namespace HangmanGame
                 }
                 else if (response == "N")
                 {
-                    Console.WriteLine("Thank you for playing!");
+                    Console.WriteLine("Thanks for playing!");
                     replay = false;
                 }
                 else
@@ -173,6 +183,7 @@ namespace HangmanGame
                     Console.WriteLine("Type Y for Yes and N for no");
                 }
             } while (!(response == "Y" || response == "N"));
+
             return replay;
         }
     }

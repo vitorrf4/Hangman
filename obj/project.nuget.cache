@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "bFuBxvLva9PDEguNX9RDy92RdS8oZz/rvw0xPQ5NyufEVGy3Bhb4N2+SQqMrz6mpAsrQCRXqJWuiE6AzmnQx+A==",
+  "dgSpecHash": "kDme2KD3Uj/TxHq2KwrMQJ365twil5tmfC1dP6Gs8gpZJzkVsghn3K1qCnmrxfHwdjfx3dSzi763qHfWY1FZSg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PICHAU\\source\\repos\\Hangman\\Hangman.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Vitor\\Source\\Repos\\Hangman\\Hangman.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vitor\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.21\\microsoft.windowsdesktop.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\Vitor\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.21\\microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\Vitor\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.21\\microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\Vitor\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.21\\microsoft.netcore.app.host.win-x64.6.0.21.nupkg.sha512"
+  ],
   "logs": []
 }

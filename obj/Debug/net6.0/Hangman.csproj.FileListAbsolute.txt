@@ -28,3 +28,18 @@ C:\Users\PICHAU\source\repos\Hangman (new)\obj\Debug\net6.0\refint\Hangman.dll
 C:\Users\PICHAU\source\repos\Hangman (new)\obj\Debug\net6.0\Hangman.pdb
 C:\Users\PICHAU\source\repos\Hangman (new)\obj\Debug\net6.0\Hangman.genruntimeconfig.cache
 C:\Users\PICHAU\source\repos\Hangman (new)\obj\Debug\net6.0\ref\Hangman.dll
+C:\Users\Vitor\Source\Repos\Hangman\bin\Debug\net6.0\Hangman.exe
+C:\Users\Vitor\Source\Repos\Hangman\bin\Debug\net6.0\Hangman.deps.json
+C:\Users\Vitor\Source\Repos\Hangman\bin\Debug\net6.0\Hangman.runtimeconfig.json
+C:\Users\Vitor\Source\Repos\Hangman\bin\Debug\net6.0\Hangman.dll
+C:\Users\Vitor\Source\Repos\Hangman\bin\Debug\net6.0\Hangman.pdb
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\Hangman.csproj.AssemblyReference.cache
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\Hangman.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\Hangman.AssemblyInfoInputs.cache
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\Hangman.AssemblyInfo.cs
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\Hangman.csproj.CoreCompileInputs.cache
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\Hangman.dll
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\refint\Hangman.dll
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\Hangman.pdb
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\Hangman.genruntimeconfig.cache
+C:\Users\Vitor\Source\Repos\Hangman\obj\Debug\net6.0\ref\Hangman.dll
